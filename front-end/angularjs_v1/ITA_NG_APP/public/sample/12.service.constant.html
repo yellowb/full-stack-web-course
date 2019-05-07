@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS service</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="MyController">
+        Movie title: <input type="text" ng-model="title" />
+    </div>
+
+    <script type="text/javascript">
+        angular.module('myapp', [])
+            .constant('MOVIE_TITLE', 'The Matrix')
+            .controller('MyController', function($scope, MOVIE_TITLE) {
+                //expect(MOVIE_TITLE).toEqual('The Matrix');
+                $scope.title = MOVIE_TITLE;
+            });
+    </script>
+</body>
+</html>

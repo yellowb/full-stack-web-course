@@ -1,0 +1,11 @@
+{
+  "name": "gulp-integration",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sequence": "^0.4.6",
+    "gulp-util": "^3.0.8"
+  }
+}

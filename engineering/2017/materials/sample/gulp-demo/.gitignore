@@ -1,0 +1,16 @@
+# IDEA
+.idea
+
+# Maven
+target
+dist
+
+# Gradle
+build
+.gradle
+
+# Node
+node_modules
+
+# Yarn
+yarn.lock

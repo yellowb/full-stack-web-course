@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="ita">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title ng-bind="title"></title>
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/angular-ui-grid/ui-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/angular-ui-select/dist/select.min.css">
+</head>
+
+<body ng-controller="ita.ctrl.MainCtrl">
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <a class="navbar-brand"></a>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row" id="sample">
+            <div ng-view></div>
+        </div>
+    </div>
+
+    <!-- JQuery and Bootstrap references -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Angular references -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.min.js"></script>
+    <script src="/bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="/bower_components/angular-ui-select/dist/select.js"></script>
+
+    <!-- App scripts -->
+    <script src="/ita.module.js"></script>
+    <script src="/ita.config.js"></script>
+    <script src="/ita.controller.js"></script>
+
+    <script src="/ita/js/trainees.service.js"></script>
+    <script src="/ita/js/login.controller.js"></script>
+    <script src="/ita/js/trainees.controller.js"></script>
+    <script src="/ita/js/detail.controller.js"></script>
+</body>
+</html>

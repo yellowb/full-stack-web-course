@@ -1,0 +1,20 @@
+{
+  "name": "ITA_NG_APP",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "4.2.3",
+    "npm": "2.14.7"
+  },
+  "scripts": {
+    "start": "node server.js >> logs/ITA_NG_APP.log 2>&1"
+  },
+  "dependencies": {
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-restify-mongoose": "^1.0.2",
+    "glob": "~4.0.6",
+    "lodash": "^4.6.1",
+    "mongoose": "^4.0.7"
+  }
+}

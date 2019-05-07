@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS scope service</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+
+    <STYLE TYPE="text/css">
+        h2 {
+            cursor: pointer;
+        }
+        .directive {
+            border: 5px solid #F5BF6E;
+            padding: 10px;
+        }
+    </STYLE>
+</head>
+<body>
+    <div ng-app="myapp">
+        <div ng-controller="MainCtrl">
+            <h2 ng-click="reverseName()">Hey {{name}}, Click me to reverse your name</h2>
+            <div my-directive class='directive'></div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        angular.module("myapp", [])
+                .controller("MainCtrl", MainCtrl)
+                .directive("myDirective", myDirective);
+
+        MainCtrl.$inject = ['$scope'];
+        function MainCtrl($scope) {
+            $scope.name = "Harry";
+            $scope.reverseName = reverseName;
+
+            function reverseName() {
+                $scope.name = $scope.name.split("").reverse().join("");
+            }
+        }
+
+        function myDirective() {
+            return {
+                restrict: "EA",
+                scope	: true, //true or {}
+                template: "<div>Your name is : {{name}}</div>Change your name: <input type='text' ng-model='name'/>"
+            }
+        }
+    </script>
+</body>
+</html>

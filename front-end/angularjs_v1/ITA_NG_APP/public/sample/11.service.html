@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS service</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="MyController">
+        Your name: <input type="text" ng-model="username" />
+        <button ng-click="sayHello()">greet</button>
+        <hr>
+        {{ greeting }}
+    </div>
+
+    <script type="text/javascript">
+        angular.module('myapp', [])
+            .controller('MyController', ['$scope', function($scope) {
+                $scope.books = [
+                    {title: "Magician", author: "Raymond E. Feist"},
+                    {title: "The Hobbit", author: "J.R.R Tolkien"}
+                ];
+
+                var bookList = $scope.books;
+                $scope.addBook = function() {
+                    bookList.push({title: "Star Wars", author: "George Lucas"});
+                    console.log(bookList);
+                }
+            }]);
+    </script>
+</body>
+</html>

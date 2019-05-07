@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS service</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+
+    <script type="text/javascript">
+        angular.module('myapp', [])
+            .constant('API_KEY', '123456789')
+            .config(function (API_KEY) {
+                // API_KEY will be assigned as 123456789
+                // which same with above API_KEY
+                console.log(API_KEY);
+            })
+            .value('fBid', '987654321')
+            .config(function (fBid) {
+                // It will thrown a error: unknow provider: fBid
+                // because it's inaccessable
+                console.log(fBid);
+            });
+    </script>
+</body>
+</html>

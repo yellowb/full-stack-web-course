@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS service</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="MyController">
+        Movie title: <input type="text" ng-model="title" />
+    </div>
+
+    <script type="text/javascript">
+        angular.module('myapp', [])
+            .factory('myService', function() {
+                return {
+                    'username': 'aUser'
+                }
+            })
+            .provider('myService', function() {
+                return {
+                    $get: function() {
+                        return {
+                            'username': 'aUser'
+                        }
+                    }
+                }
+            });
+    </script>
+</body>
+</html>

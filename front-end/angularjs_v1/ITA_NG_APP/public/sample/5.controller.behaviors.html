@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS controller</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="MyController">
+        Enter Message: <input type="text" ng-model="message" /> <br>
+        <button ng-click="showMsg(message)">Show Message</button>
+    </div>
+
+    <script type="text/javascript">
+        var app = angular.module('myapp', []);
+
+        app.controller('MyController', function($scope) {
+            $scope.message = "Hello World!";
+
+            $scope.showMsg = function(msg) {
+                alert(msg);
+            }
+        });
+    </script>
+</body>
+</html>

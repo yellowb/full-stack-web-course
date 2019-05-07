@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS service</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+
+    <script type="text/javascript">
+        angular.module('myapp', [])
+            .service('persionService', function($http) {
+                this.getName = function() {
+                    return $http({method: 'GET', url: '/api/user'});
+                }
+            });
+    </script>
+</body>
+</html>

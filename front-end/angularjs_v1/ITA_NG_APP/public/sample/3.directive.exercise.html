@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS directive calling order</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app="greetings">
+    <div><welcome hello howdy>Only hello!</welcome></div>
+    <div><welcome hello howdy>Only hello!</welcome></div>
+    <div><welcome howdy>Only howdy!</welcome></div>
+    <div><welcome hi>Only hi!</welcome></div>
+
+    <script type="text/javascript" src="js/greetings.js"></script>
+</body>
+</html>
+
+

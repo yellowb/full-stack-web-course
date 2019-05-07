@@ -1,0 +1,15 @@
+{
+  "name": "webpack-tree-shaking-demo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --optimize-minimize"
+  },
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.4.1"
+  }
+}

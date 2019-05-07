@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS service</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="MyController">
+        Value: <input type="text" ng-model="sValue" /><br>
+        Constant: <input type="text" ng-model="sConstant" />
+    </div>
+
+    <script type="text/javascript">
+        angular.module('myapp', [])
+            .value('fBid', '987654321')
+            .constant('API_KEY', '123456789')
+            .controller('MyController', function ($scope, fBid, API_KEY) {
+                $scope.sValue = fBid;
+                $scope.sConstant = API_KEY;
+            });
+    </script>
+</body>
+</html>

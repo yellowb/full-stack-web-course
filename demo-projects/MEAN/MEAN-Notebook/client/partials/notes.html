@@ -1,0 +1,39 @@
+<div class="container" ng-controller="noteBookCtrl">
+    <div class="row col-md-12">
+        <div>
+            <input type="text" class="form-control input-lg" placeholder="Enter a note" ng-keypress="save($event)" ng-model="noteInput">
+        </div>
+        <br/>
+        <div class="input-group">
+            <span class="input-group-addon glyphicon glyphicon-search "></span>
+            <input type="text" class="form-control input-lg searchbar" placeholder="Search..." ng-change="search()" ng-model="searchInput">
+        </div>
+    </div>
+    <div class="row col-md-12 notes">
+        <div class="alert alert-info text-center" ng-hide="notes.length > 0">
+            <h3>No Notes yet!</h3>
+        </div>
+        <div ng-repeat="note in notes" class="note col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-8 col-sm-8 col-xs-8">
+                <div class="row">
+                    <span ng-show="!isEditable[$index]">{{note.content}}</span>
+                    <input ng-show="isEditable[$index]" type="text" value="{{note.content}}" ng-keypress="edit($event,$index);">
+                    <input ng-show="isEditable[$index]" type="button" class="btn btn-warning" style="vertical-align:top" value="Cancel" ng-click="isEditable[$index] = false" />
+                </div>
+                <div class="row">
+                    <span class="label label-success" ng-show="!isEditable[$index]">Last Updated: {{note.lastUpdateTime | date: 'dd MMM yyyy (EEE), HH:mm:ss' }}</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <button type="button" class="btn btn-info pull-right" ng-click="isEditable[$index] = true">
+                    Edit
+                </button>
+                <button type="button" class="btn btn-danger pull-right" ng-click="delete($index)">
+                    Delete
+                </button>
+            </div>
+
+        </div>
+    </div>
+  </div>
+</div>

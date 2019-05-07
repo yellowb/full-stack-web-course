@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS scope service</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+
+    <script type="text/javascript">
+        angular.module('myapp', [])
+            .controller('ParentController', ['$scope', function($scope) {
+                $scope.username = "Jon";
+            }])
+            .controller('ChildController', ['$scope', function($scope) {
+                console.log($scope.username);
+            }]);
+    </script>
+</head>
+<body ng-app="myapp">
+    <div ng-controller="ParentController">
+        user name in parent scope:
+        <input type="text" ng-model="username" />
+
+        <div ng-controller="ChildController">
+            user name in child scope:
+            <input type="text" ng-model="username" />
+        </div>
+    </div>
+</body>
+</html>

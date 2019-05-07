@@ -1,0 +1,16 @@
+{
+  "name": "myApp",
+  "version": "0.1.0",
+  "description": "A MEAN stack NoteBook App",
+  "private": true,
+  "dependencies": {
+    "jquery": "~3.1.0",
+    "bootstrap": "~3.3.7",
+    "angular": "~1.5.8",
+    "angular-route": "~1.5.8",
+    "angular-bootstrap": "~2.0.1",
+    "lodash": "~4.14.1",
+    "moment": "^2.14.1",
+    "moment-timezone": "^0.5.5"
+  }
+}
